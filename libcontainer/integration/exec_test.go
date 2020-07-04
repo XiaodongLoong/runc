@@ -594,10 +594,6 @@ func TestPidsSystemd(t *testing.T) {
 }
 
 func testPids(t *testing.T, systemd bool) {
-	if testing.Short() {
-		return
-	}
-
 	rootfs, err := newRootfs()
 	ok(t, err)
 	defer remove(rootfs)
@@ -677,9 +673,6 @@ func TestRunWithKernelMemorySystemd(t *testing.T) {
 }
 
 func testRunWithKernelMemory(t *testing.T, systemd bool) {
-	if testing.Short() {
-		return
-	}
 	rootfs, err := newRootfs()
 	ok(t, err)
 	defer remove(rootfs)
